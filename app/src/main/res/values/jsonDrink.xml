@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    [
+    {
+    "id": 1,
+    "name": "Espresso",
+    "category": "Coffee",
+    "ingredients": ["Espresso"],
+    "extras": {
+    "sugar": "optional",
+    "ice": "required"
+    },
+    "images": "https://loremflickr.com/320/240/drink?lock=1"
+    },
+    {
+    "id": 2,
+    "name": "Mojito",
+    "category": "Cocktail",
+    "ingredients": ["White rum", "Lime juice", "Mint", "Sugar", "Soda water"],
+    "extras": {
+    "sugar": "optional",
+    "ice": "required"
+    },
+    "images": "https://loremflickr.com/320/240/drink?lock=2"
+    },
+    {
+    "id": 3,
+    "name": "Green Tea",
+    "category": "Tea",
+    "ingredients": ["Green tea leaves", "Hot water"],
+    "extras": {
+    "sugar": "optional",
+    "ice": "required"
+    },
+    "images": "https://loremflickr.com/320/240/drink?lock=3"
+    },
+    {
+    "id": 4,
+    "name": "Margarita",
+    "category": "Cocktail",
+    "ingredients": ["Tequila", "Triple sec", "Lime juice", "Salt"],
+    "extras": {
+    "sugar": "optional",
+    "ice": "required"
+    },
+    "images": "https://loremflickr.com/320/240/drink?lock=4"
+    },
+    {
+    "id": 5,
+    "name": "Hot Chocolate",
+    "category": "Chocolate",
+    "ingredients": ["Cocoa powder", "Sugar", "Milk"],
+    "extras": {
+    "sugar": "optional",
+    "ice": "required"
+    },
+    "images": "https://loremflickr.com/320/240/drink?lock=5"
+    },
+    {
+    "id": 6,
+    "name": "Lemonade",
+    "category": "Juice",
+    "ingredients": ["Lemon juice", "Water", "Sugar"],
+    "extras": {
+    "sugar": "optional",
+    "ice": "required"
+    },
+    "images": "https://loremflickr.com/320/240/drink?lock=6"
+    },
+    {
+    "id": 7,
+    "name": "Milkshake",
+    "category": "Smoothie",
+    "ingredients": ["Milk", "Ice cream", "Flavoring"],
+    "extras": {
+    "sugar": "optional",
+    "ice": "required"
+    },
+    "images": "https://loremflickr.com/320/240/drink?lock=7"
+    },
+    {
+    "id": 8,
+    "name": "Long Island Iced Tea",
+    "category": "Cocktail",
+    "ingredients": ["Vodka", "Tequila", "Rum", "Triple sec", "Lemon juice", "Simple syrup", "Cola"],
+    "extras": {
+    "sugar": "optional",
+    "ice": "required"
+    },
+    "images": "https://loremflickr.com/320/240/drink?lock=8"
+    },
+    {
+    "id": 9,
+    "name": "Matcha Latte",
+    "category": "Tea",
+    "ingredients": ["Matcha powder", "Milk", "Hot water"],
+    "extras": {
+    "sugar": "optional",
+    "ice": "required"
+    },
+    "images": "https://loremflickr.com/320/240/drink?lock=9"
+    },
+    {
+    "id": 10,
+    "name": "Iced Coffee",
+    "category": "Coffee",
+    "ingredients": ["Cold brew coffee", "Milk", "Sugar", "Ice"],
+    "extras": {
+    "sugar": "optional",
+    "ice": "required"
+    },
+    "images": "https://loremflickr.com/320/240/drink?lock=10"
+    }
+    ]
+</resources>
