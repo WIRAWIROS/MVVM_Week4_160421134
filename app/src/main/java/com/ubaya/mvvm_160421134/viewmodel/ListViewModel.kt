@@ -15,7 +15,7 @@ import com.ubaya.mvvm_160421134.model.Drinks
 import com.ubaya.mvvm_160421134.model.Student
 
 class ListViewModel(application: Application): AndroidViewModel(application) {
-    val studentsLD = MutableLiveData<ArrayList<Student>>()
+    val studentsLD = MutableLiveData<ArrayList<Drinks>>()
     val DrinksLD = MutableLiveData<ArrayList<Drinks>>()
     val DrinksLoadErrorLD = MutableLiveData<Boolean>()
     val studentLoadErrorLD = MutableLiveData<Boolean>()
@@ -34,8 +34,8 @@ class ListViewModel(application: Application): AndroidViewModel(application) {
         val stringRequest = StringRequest(
             Request.Method.GET, url,
             {
-                val sType = object : TypeToken<List<Student>>() { }.type
-                val result = Gson().fromJson<List<Student>>(it, sType)
+                val sType = object : TypeToken<List<Drinks>>() { }.type
+                val result = Gson().fromJson<List<Drinks>>(it, sType)
                 DrinksLD.value = result as ArrayList<Drinks>?
                 loadingLD.value = false
 
