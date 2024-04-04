@@ -25,7 +25,7 @@ class ListViewModel(application: Application): AndroidViewModel(application) {
     private var queue: RequestQueue? = null
 
     fun refresh() {
-        DrinksLoadErrorLD.value = false
+        studentLoadErrorLD.value = false
         loadingLD.value = true
 
         queue = Volley.newRequestQueue(getApplication())
@@ -34,16 +34,16 @@ class ListViewModel(application: Application): AndroidViewModel(application) {
         val stringRequest = StringRequest(
             Request.Method.GET, url,
             {
-                val sType = object : TypeToken<List<Drinks>>() { }.type
-                val result = Gson().fromJson<List<Drinks>>(it, sType)
-                DrinksLD.value = result as ArrayList<Drinks>?
+                val sType = object : TypeToken<List<Student>>() { }.type
+                val result = Gson().fromJson<List<Student>>(it, sType)
+                studentsLD.value = result as ArrayList<Student>?
                 loadingLD.value = false
 
                 Log.d("show_volley", it)
             },
             {
                 Log.e("show_volley", it.toString())
-                DrinksLoadErrorLD.value = false
+                studentLoadErrorLD.value = false
                 loadingLD.value = false
             })
         stringRequest.tag = TAG
