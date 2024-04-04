@@ -15,7 +15,7 @@ import com.ubaya.mvvm_160421134.model.Drinks
 import com.ubaya.mvvm_160421134.model.Student
 
 class ListViewModel(application: Application): AndroidViewModel(application) {
-    val studentsLD = MutableLiveData<ArrayList<Drinks>>()
+    val studentsLD = MutableLiveData<ArrayList<Student>>()
     val DrinksLD = MutableLiveData<ArrayList<Drinks>>()
     val DrinksLoadErrorLD = MutableLiveData<Boolean>()
     val studentLoadErrorLD = MutableLiveData<Boolean>()
