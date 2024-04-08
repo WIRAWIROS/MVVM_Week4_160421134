@@ -31,7 +31,8 @@ class StudentListAdapter(val studentList:ArrayList<Student>)
         holder.binding.txtName.text = studentList[position].name
 
         holder.binding.btnDetail.setOnClickListener {
-            val action = StudentFragmentDirections.actionStudentDetailFragment()
+            val studentId = studentList[position].id
+            val action = StudentFragmentDirections.actionStudentDetailFragment(studentId.toString())
             Navigation.findNavController(it).navigate(action)
         }
         val picasso = Picasso.Builder(holder.itemView.context)
