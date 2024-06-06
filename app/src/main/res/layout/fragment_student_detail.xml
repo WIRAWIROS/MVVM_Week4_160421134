@@ -18,7 +18,7 @@
             android:src="@drawable/ic_launcher_foreground" />
 
         <EditText
-            android:id="@+id/txtId"
+            android:id="@+id/txtID"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="10dp"

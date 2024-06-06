@@ -12,7 +12,7 @@ import com.ubaya.mvvm_160421134.databinding.StudentListItemBinding
 import com.ubaya.mvvm_160421134.model.Student
 
 class StudentListAdapter(val studentList:ArrayList<Student>)
-    :RecyclerView.Adapter<StudentListAdapter.StudentViewHolder>()
+    :RecyclerView.Adapter<StudentListAdapter.StudentViewHolder>(),ButtonDetailClickListener
 {
     class StudentViewHolder(var binding: StudentListItemBinding)
         :RecyclerView.ViewHolder(binding.root)
@@ -22,14 +22,19 @@ class StudentListAdapter(val studentList:ArrayList<Student>)
         return StudentViewHolder(binding)
     }
 
+    override fun onButtonDetailClick(v: View) {
+        val action = StudentFragmentDirections.actionStudentDetailFragment(v.tag.toString())
+        Navigation.findNavController(v).navigate(action)
+    }
+
     override fun getItemCount(): Int {
         return studentList.size
     }
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
-        holder.binding.txtID.text = studentList[position].id
-        holder.binding.txtName.text = studentList[position].name
-
+        holder.binding.student = studentList[position]
+        holder.binding.listener = this
+        /*
         holder.binding.btnDetail.setOnClickListener {
             val studentId = studentList[position].id
             val action = StudentFragmentDirections.actionStudentDetailFragment(studentId.toString())
@@ -50,6 +55,7 @@ class StudentListAdapter(val studentList:ArrayList<Student>)
                     Log.e("picasso_error", e.toString())
                 }
             })
+        */
     }
     fun updateStudentList(newStudentList: ArrayList<Student>) {
         studentList.clear()
