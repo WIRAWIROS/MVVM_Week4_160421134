@@ -33,13 +33,34 @@ class StudentDetailFragment : Fragment() {
         return binding.root
     }
 
+    override fun onButtonDetailClick(v: View) {
+        viewModel.studentLD.value?.let { student ->
+            Observable.timer(5, TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe {
+                    Log.d("Messages", "five seconds")
+                    MainActivity.showNotification(
+                        student.name.toString(),
+                        "A new notification created",
+                        R.drawable.baseline_person_24
+                    )
+                }
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
+        binding.student = studentList[position]
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.listener = this
+
         val studentId = args.studentId
         viewModel.fetch(studentId)
 
+        /*
         viewModel.studentLD.observe(viewLifecycleOwner, Observer { student ->
             binding.txtID.setText(student.id)
             binding.txtName.setText(student.name)
@@ -65,7 +86,10 @@ class StudentDetailFragment : Fragment() {
         binding.btnUpdate.setOnClickListener {
             observeViewModel()
         }
+        */
     }
+
+    /*
     fun observeViewModel() {
         viewModel.studentLD.observe(viewLifecycleOwner, Observer {
             var student = it
@@ -84,4 +108,5 @@ class StudentDetailFragment : Fragment() {
             }
         })
     }
+    */
 }
